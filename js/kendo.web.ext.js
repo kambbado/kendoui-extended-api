@@ -624,14 +624,14 @@
                 }, options);
 
                 $(document.body).append(kendo.format("<div id='extAlertDialog' style='position:relative;'><div style='position:absolute;left:10px;top:10px;' class='{0}'></div><div style='display:inline-block;margin-left:45px;'>{1}</div></div>", options.icon, options.message));
-                dialog = $("#extAlertDialog").kendoExtDialog(options).data("kendoExtDialog");
+                dialog = $("#extAlertDialog").kendoExtDialog(options).data("kendoWindow");
                 $("#extAlertDialog").parent().find("div.k-window-titlebar div.k-window-actions").empty();
                 dialog.center().open();
             });
         },
 
         hide: function () {
-            $("#extAlertDialog").data("kendoExtDialog").close();
+            $("#extAlertDialog").data("kendoWindow").close();
         }
     };
 
@@ -656,13 +656,13 @@
                     buttons: [{
                         name: "OK",
                         click: function (e) {
-                            $("#extOkCancelDialog").data("kendoExtDialog").close();
+                            $("#extOkCancelDialog").data("kendoWindow").close();
                             deferred.resolve({ button: "OK" });
                         }
                     }, {
                         name: "Cancel",
                         click: function (e) {
-                            $("#extOkCancelDialog").data("kendoExtDialog").close();
+                            $("#extOkCancelDialog").data("kendoWindow").close();
                             deferred.resolve({ button: "Cancel" });
                         }
                     }],
@@ -675,7 +675,7 @@
                 $(document.body).append(kendo.format("<div id='extOkCancelDialog' style='position:relative;'><div style='position:absolute;left:10px;top:10px;' class='{0}'></div><div style='display:inline-block;margin-left:45px;'>{1}</div></div>", options.icon, options.message));
                 $("#extOkCancelDialog").kendoExtDialog(options);
                 $("#extOkCancelDialog").parent().find("div.k-window-titlebar div.k-window-actions").empty();
-                $("#extOkCancelDialog").data("kendoExtDialog").center().open();
+                $("#extOkCancelDialog").data("kendoWindow").center().open();
             });
         }
     };
@@ -701,13 +701,13 @@
                     buttons: [{
                         name: "Yes",
                         click: function (e) {
-                            $("#extYesNoDialog").data("kendoExtDialog").close();
+                            $("#extYesNoDialog").data("kendoWindow").close();
                             deferred.resolve({ button: "Yes" });
                         }
                     }, {
                         name: "No",
                         click: function (e) {
-                            $("#extYesNoDialog").data("kendoExtDialog").close();
+                            $("#extYesNoDialog").data("kendoWindow").close();
                             deferred.resolve({ button: "No" });
                         }
                     }],
@@ -720,12 +720,12 @@
                 $(document.body).append(kendo.format("<div id='extYesNoDialog' style='position:relative;'><div style='position:absolute;left:10px;top:10px;' class='{0}'></div><div style='display:inline-block;margin-left:45px;'>{1}</div></div>", options.icon, options.message));
                 $("#extYesNoDialog").kendoExtDialog(options);
                 $("#extYesNoDialog").parent().find("div.k-window-titlebar div.k-window-actions").empty();
-                $("#extYesNoDialog").data("kendoExtDialog").center().open();
+                $("#extYesNoDialog").data("kendoWindow").center().open();
             });
         },
 
         hide: function () {
-            $("#extYesNoDialog").data("kendoExtDialog").close();
+            $("#extYesNoDialog").data("kendoWindow").close();
         }
     };
 
