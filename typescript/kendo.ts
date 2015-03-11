@@ -271,6 +271,11 @@ module Kendo.Alerts {
 //----------------------------------------------------------------------------
 class Utilities {
 
+    public static Info(sMessage: string, sTitle?: string) {
+        $.when(new Kendo.Alerts.Message({
+            icon: "k-ext-information"
+        }).Alert(sMessage, sTitle));
+    }
     public static Alert(sMessage: string, sTitle?: string) {
         $.when(new Kendo.Alerts.Message().Alert(sMessage, sTitle));
     }
